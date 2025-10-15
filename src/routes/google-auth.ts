@@ -1,5 +1,6 @@
 import { Router, type NextFunction, type Request, type Response } from "express";
 import passport from "passport";
+import googleCallbackController from "../controllers/googleCallbackController.js";
 
 const routes = Router()
 
@@ -12,7 +13,7 @@ routes.get('/google', async (req: Request, res: Response, next: NextFunction) =>
 })
 
 routes.get(
-    '/google/callback', passport.authenticate('google', { failureRedirect: '/login'})
-    // AuthControllerAuthController.googleCallbackController
+    '/google/callback', passport.authenticate('google', { failureRedirect: '/login'}),
+    googleCallbackController 
 )
 

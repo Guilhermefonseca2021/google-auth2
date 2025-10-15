@@ -2,7 +2,7 @@ import cookieParser from "cookie-parser";
 import express from "express";
 import expressSession from "express-session";
 import passport from "passport";
-import config from "./config/auth.js";
+import config from "./config/auth";
 
 const app = express();
 
